@@ -1,0 +1,148 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+ul {
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica;
+}
+
+.container {
+    display: flex;
+    background-image: url("./imgs/01.jpg");
+    background-size: cover;
+    position: relative;
+    height: 100vh;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+nav {
+    width: 250px;
+    background-color: #666;
+    height: 100vh;
+    padding: 10px;
+    position: absolute;
+    left: -250px;
+    z-index: 10;
+    transition: left .3s linear;
+}
+
+.toggle_menu {
+    left: 0;
+}
+
+nav .btn_close {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    padding: 3px;
+    color: #fff;
+    top: 0;
+    left: 250px;
+    background-color: red;
+    cursor: pointer;
+}
+
+nav .btn_close span:nth-child(1),
+nav .btn_close span:nth-child(2),
+nav .btn_close span:nth-child(3) {
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: #fff;
+    left: 2px;
+    transition: all .3s;
+}
+
+nav .btn_close span:nth-child(1) {
+    top: 8px;
+}
+
+nav .btn_close span:nth-child(1).button_close {
+    background-color: transparent;
+}
+
+nav .btn_close span:nth-child(2) {
+    top: 16px;
+}
+
+nav .btn_close span:nth-child(2).button_close {
+    transform: rotate(-45deg);
+}
+
+nav .btn_close span:nth-child(3) {
+    top: 24px;
+}
+
+nav .btn_close span:nth-child(3).button_close {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+nav h1 {
+    text-align: center;
+}
+
+nav .father {
+    width: 100%;
+    color: #fff;
+}
+
+nav .father li {
+    padding: 15px;
+    cursor: pointer;
+}
+
+nav .son li {
+    border-bottom: 1px solid #ddd;
+    transition: .3s;
+}
+
+nav .father li:hover {
+    background-color: #222;
+}
+
+nav .son li:hover {
+    background-color: #444;
+    padding-left: 25px;
+}
+
+nav .son {
+    display: none;
+}
+
+nav .father li:nth-child(2):hover .son {
+    display: block;
+}
+
+section {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+}
+
+section h1 {
+    width: fit-content;
+    margin: 0 auto 20px;
+    border-bottom: 2px solid violet;
+    z-index: 1;
+}
